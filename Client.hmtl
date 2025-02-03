@@ -1,0 +1,28 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <h1>Product Recommendations</h1>
+    <input type="text" id="query" placeholder="What are you looking for?" />
+    <button onclick="getRecommendation()">Get Recommendation</button>
+    <div id="recommendation"></div>
+
+    <script>
+        async function getRecommendation() {
+            const query = document.getElementById('query').value;
+            const response = await fetch('http://localhost:5000/recommend', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+            const data = await response.json();
+            document.getElementById('recommendation').innerHTML = `Recommended Product: ${data.description}`;
+        }
+    </script>
+</body>
+</html>
