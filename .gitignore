@@ -1,0 +1,36 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+
+# Environment variable files
+.env
+
+# Build output directories (if you generate builds)
+dist/
+build/
+
+# Log files
+*.log
+
+# Node modules (if using any Node packages)
+node_modules/
+
+# Coverage reports (if using coverage tools)
+coverage/
+
+# Generated stats files (Webpack Bundle Analyzer, etc.)
+stats.json
+stats_clean.json
+
+# Python egg info
+*.egg-info/
+
+# System files
+.DS_Store
+Thumbs.db
