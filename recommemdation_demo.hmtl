@@ -1,0 +1,27 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Demo</title>
+    <script>
+        const products = [
+            { id: 1, name: "Red Shoes", description: "Comfortable red running shoes" },
+            { id: 2, name: "Blue Jeans", description: "Stylish blue denim jeans" },
+            { id: 3, name: "White Shirt", description: "Elegant white formal shirt" }
+        ];
+
+        function recommendProduct(query) {
+            const recommendation = products.find(product => product.description.toLowerCase().includes(query.toLowerCase()));
+            document.getElementById('result').textContent = recommendation ? 
+                `Recommended: ${recommendation.name}` : "No matching product found.";
+        }
+    </script>
+</head>
+<body>
+    <h1>Product Recommendation Demo</h1>
+    <input type="text" id="query" placeholder="Describe what you need">
+    <button onclick="recommendProduct(document.getElementById('query').value)">Get Recommendation</button>
+    <p id="result">Recommendation will appear here...</p>
+</body>
+</html>
